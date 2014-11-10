@@ -4,8 +4,24 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 	<!-- We create this file, each bean could be one object with property -->
-	<bean id="helloWorld" class="com.tutorial.HelloWorld">
+	<bean id="helloWorld" class="com.tutorial.HelloWorld" scope="singleton">
 		<property name="message" value="Hello World"></property>
 	</bean>
+	<bean id="helloWorld-prototype" class="com.tutorial.HelloWorld"
+		scope="prototype">
+		<property name="message" value="Hello World"></property>
+	</bean>
+
+	<bean id="testLifeCycle" class="com.tutorial.TestLifeCycle" scope="singleton">
+	</bean>
+
+	<bean id="test-inherit-1" abstract="true">
+	<property name="message1" value="Message 1..."/>
+	</bean>
+	<bean id="test-inherit-2" class="com.tutorial.TestInheritance"
+		parent="test-inherit-1">
+		<property name="message2" value="Message 2 content..." />
+	</bean>
+
 
 </beans>
