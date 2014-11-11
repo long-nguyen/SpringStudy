@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- We create this file, each bean could be one object with property -->
+	<bean id="helloWorld" class="com.tutorial.HelloWorld" scope="singleton">
+		<property name="message" value="Hello World"></property>
+	</bean>
+
+	<bean id="cStopEventHandler" class="com.tutorial.CStopEventHandler">
+	</bean>
+
+	<bean id="cStartEventHandler" class="com.tutorial.CStartEventHandler">
+	</bean>
+	<bean id="customEventHandler" class="com.tutorial.customevent.CustomEventHandler" />
+
+	<bean id="customEventPublisher" class="com.tutorial.customevent.CustomEventPublisher" />
+</beans>

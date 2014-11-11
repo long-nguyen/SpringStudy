@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context-3.0.xsd"
+	>
+
+	<bean id="textEditor" class="com.tutorial.TextEditor">
+		<property name="spellChecker">
+			<bean id="spellChecker" class="com.tutorial.SpellChecker"></bean>
+		</property>
+	</bean>
+
+	<bean id="beanList" class="com.tutorial.BeanList">
+		<property name="addressList">
+			<list>
+				<value>Long</value>
+				<value>Nguyên</value>
+				<value>Trình</value>
+			</list>
+		</property>
+		<property name="addressMap">
+			<map>
+				<entry key="1" value="Long"/>	
+				<entry key="2" value="Nguyên"/>	
+				<entry key="3" value="Trinfh"/>	
+			</map>
+		</property>
+		<property name="beanList">
+			<list>
+				<ref bean="textEditor"/>
+				<ref bean="textEditor"/>	
+			</list>
+		</property>
+	</bean>
+
+	<context:annotation-config/>	
+	<bean id="foo" class="com.tutorial.annotation.Foo">
+		<property name="name" value="Apurav"></property>
+	</bean>	
+	<bean id="anotherFoo" class="com.tutorial.annotation.Foo">
+		<property name="name" value="Chauhan"></property>
+		<qualifier value="secondaryFoo"></qualifier>
+	</bean>
+	<bean id="bar" class="com.tutorial.annotation.Bar"></bean>
+</beans>
