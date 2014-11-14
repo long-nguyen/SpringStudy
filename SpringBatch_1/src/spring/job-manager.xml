@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/jdbc 
+	http://www.springframework.org/schema/jdbc/spring-jdbc-3.2.xsd 
+	">
+
+	<!--^^^^^^^^^^^^^^^^^^^^^^A job manager will contain job launcher, and the 
+		repository to save job state(running, fail, success..). There is ways to 
+		state job repository: in memory and in database ^^^^^^^^^^^^^^^^^^^^^^ -->
+
+
+	<!--^^^^^^^^^^^^^^^^^^^^^^In memory^^^^^^^^^^^^^^^^^^^^^^ -->
+
+	<!-- <bean id="jobRepository" class="org.springframework.batch.core.repository.support.MapJobRepositoryFactoryBean"> 
+		<property name="transactionManager" ref="transactionManager" /> </bean> -->
+
+
+	<!--^^^^^^^^^^^^^^^^^^^^^^In database^^^^^^^^^^^^^^^^^^^^^^ -->
+	<bean id="jobRepository"
+		class="org.springframework.batch.core.repository.support.JobRepositoryFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="transactionManager" ref="transactionManager" />
+		<property name="databaseType" value="mysql" />
+	</bean>
+
+	<!-- The database must be created(empty) before doing test -->
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url"
+			value="jdbc:mysql://localhost:3306/springstudy-batch" />
+		<property name="username" value="root" />
+		<property name="password" value="" />
+	</bean>
+
+	<!-- Need transaction manager to manage all commit/rollback (reference:Spring AOP) -->
+	<bean id="transactionManager"
+		class="org.springframework.batch.support.transaction.ResourcelessTransactionManager" />
+
+	<jdbc:initialize-database data-source="dataSource">
+		<jdbc:script location="org/springframework/batch/core/schema-drop-mysql.sql" />
+		<jdbc:script location="org/springframework/batch/core/schema-mysql.sql" />
+	</jdbc:initialize-database>
+
+
+</beans>

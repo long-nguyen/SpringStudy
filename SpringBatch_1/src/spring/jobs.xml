@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:batch="http://www.springframework.org/schema/batch"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/batch
+	http://www.springframework.org/schema/batch/spring-batch-2.2.xsd">
+
+	<!--^^^^^^^^^^^^^^^^^^^^^^We import other config file^^^^^^^^^^^^^^^^^^^^^^ -->
+	<import resource="job-manager.xml" />
+	<bean id="report" class="com.models.Report" scope="prototype" />
+	<bean id="itemProcessor" class="com.controller.ReportItemProcessor" />
+
+	<!--^^^^^^^^^^^^^^^^^^^^^^Batch job^^^^^^^^^^^^^^^^^^^^^^ -->
+	<batch:job id="job1">
+		<batch:step id="step1">
+			<batch:tasklet>
+				<batch:chunk reader="csvFileItemReader" writer="xmlItemWriter"
+					processor="itemProcessor" commit-interval="10" />
+			</batch:tasklet>
+		</batch:step>
+	</batch:job>
+
+	<!-- Declare an item reader -->
+	<!-- Item reader need to have input(resource) and a rules to parse the file -->
+	<bean id="csvFileItemReader" class="org.springframework.batch.item.file.FlatFileItemReader">
+		<!-- Input -->
+		<property name="resource" value="classpath:resources/report.csv" />
+		<!-- Rule to parse -->
+		<property name="lineMapper">
+			<bean class="org.springframework.batch.item.file.mapping.DefaultLineMapper">
+				<!-- Parse line by line, each item is one line -->
+				<property name="lineTokenizer">
+					<bean
+						class="org.springframework.batch.item.file.transform.DelimitedLineTokenizer">
+						<property name="names" value="id,sales,qty,staffName,date"></property>
+					</bean>
+				</property>
+				<!-- Map the line data to item, using our class -->
+				<property name="fieldSetMapper">
+					<bean class="com.controller.ReportFieldSetMapper" />
+				</property>
+			</bean>
+		</property>
+	</bean>
+
+	<!-- Declare an item writer. An implementation of ItemWriter which uses StAX and Marshaller for serializing object to XML.
+	 This item writer also provides restart, statistics and transaction features by implementing corresponding interfaces. 
+	 The implementation is not thread-safe. -->
+	
+	<bean id="xmlItemWriter" class="org.springframework.batch.item.xml.StaxEventItemWriter">
+		<property name="resource" value="file:xml/output/report.xml" />
+		<!-- A way to write data -->
+		<property name="marshaller" ref="reportMarshaller" />
+		<property name="rootTagName" value="report" />
+	</bean>
+
+	<!--Marshalling: map an object to xml http://codereq.com/marshalling-and-unmarshalling-xml-using-spring/-->
+	<bean id="reportMarshaller" class="org.springframework.oxm.jaxb.Jaxb2Marshaller">
+		 <!-- specify which class is to be used for mapping XML to class. -->
+		<property name="classesToBeBound">
+			<list>
+				<value>com.models.Report</value>
+			</list>
+		</property>
+	</bean>
+
+	<!--^^^^^^^^^^^^^^^^^^^^^^ A launcher: which is used to launch a job(called in Main.java)^^^^^^^^^^^^^^^^^^^^^^ -->
+	<bean id="jobLauncher"
+		class="org.springframework.batch.core.launch.support.SimpleJobLauncher">
+		<!-- A job launcher will need a job repository -->
+		<property name="jobRepository" ref="jobRepository" />
+	</bean>
+</beans>
