@@ -12,6 +12,11 @@ import org.springframework.batch.core.repository.JobRestartException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+/***
+ * This project is a sample of batch, it read csv file and write to xml file
+ * @author long.nguyen-tien
+ *
+ */
 public class Main {
 	public static void main(String[] args) {
 		//Config of a spring app 

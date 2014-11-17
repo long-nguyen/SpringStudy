@@ -5,68 +5,24 @@
 	 http://www.springframework.org/schema/beans/spring-beans.xsd
 	 http://www.springframework.org/schema/batch
 	http://www.springframework.org/schema/batch/spring-batch-2.2.xsd">
+		<import resource="job-manager.xml" />
+	
 
 	<batch:job id="job1">
-		<batch:step id="step1" next="step2">
-			<batch:tasklet>
-				<batch:chunk reader="multiResourceReader" writer="flatFileItemWriter"
-					commit-interval="1" />
-			</batch:tasklet>
-		</batch:step>
-		<batch:step id="step2">
+		<batch:step id="step1">
 			<batch:tasklet ref="fileDeletingTasklet"></batch:tasklet>
 		</batch:step>
 	</batch:job>
 
-
-	<bean id="fileDeletingTasklet" class="FileDeletingTasklet">
-		<property name="directory" value="file:csv/inputs/"></property>
+	<bean id="fileDeletingTasklet" class="main.java.FileDeletingTasklet">
+		<property name="directory" value="classpath:main/resources/csv"></property>
 	</bean>
-	<bean id="multiResourceReader"
-		class="org.springframework.batch.item.file.MultiResourceItemReader">
-		<property name="resources" value="file:csv/inputs/domain-*.csv"></property>
-		<property name="delegate" ref="fla"></property>
-	</bean>
-
-
-	<bean id="flatFileItemWriter" class="org.springframework.batch.item.file.FlatFileItemWriter">
-
-		<property name="resource" value="file:csv/outputs/domain.all.csv" />
-		<property name="appendAllowed" value="false" />
-		<property name="lineAggregator">
-			<bean
-				class="org.springframework.batch.item.file.transform.DelimitedLineAggregator">
-				<property name="delimiter" value="," />
-				<property name="fieldExtractor">
-					<bean
-						class="org.springframework.batch.item.file.transform.BeanWrapperFieldExtractor">
-						<property name="names" value="id, domain" />
-					</bean>
-				</property>
-			</bean>
-		</property>
-	</bean>
-
-	<bean id="flatFileItemReader" class="org.springframework.batch.item.file.FlatFileItemReader">
-
-		<property name="lineMapper">
-			<bean class="org.springframework.batch.item.file.mapping.DefaultLineMapper">
-
-				<property name="lineTokenizer">
-					<bean
-						class="org.springframework.batch.item.file.transform.DelimitedLineTokenizer">
-						<property name="names" value="id, domain" />
-					</bean>
-				</property>
-				<property name="fieldSetMapper">
-					<bean
-						class="org.springframework.batch.item.file.mapping.BeanWrapperFieldSetMapper">
-						<property name="prototypeBeanName" value="domain" />
-					</bean>
-				</property>
-			</bean>
-		</property>
-
+	
+	<!--^^^^^^^^^^^^^^^^^^^^^^ A launcher: which is used to launch a job(called in Main.java)^^^^^^^^^^^^^^^^^^^^^^ -->
+	<bean id="jobLauncher"
+		class="org.springframework.batch.core.launch.support.SimpleJobLauncher">
+		<!-- A job launcher will need a job repository -->
+		<property name="jobRepository" ref="jobRepository" />
 	</bean>
 
 </beans>
