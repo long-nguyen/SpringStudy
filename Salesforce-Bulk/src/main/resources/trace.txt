@@ -1,0 +1,607 @@
+WSC: Creating a new connection to https://ap.salesforce.com/services/async/32.0/job/ Proxy = DIRECT username null
+------------ Request start   ----------
+<?xml version="1.0" encoding="UTF-8"?><jobInfo
+   xmlns="http://www.force.com/2009/06/asyncapi/dataload">
+ <operation>query</operation>
+ <object>Merchant__c</object>
+ <concurrencyMode>Parallel</concurrencyMode>
+ <contentType>CSV</contentType>
+</jobInfo>
+------------ Request end   ----------
+null=[HTTP/1.1 201 Created]
+Transfer-Encoding=[chunked]
+Date=[Wed, 19 Nov 2014 09:09:18 GMT]
+Expires=[Thu, 01 Jan 1970 00:00:00 GMT]
+Location=[/services/async/32.0/job/75010000000zAsoAAE]
+Set-Cookie=[BrowserId=IJ6zQ_XdT86bX0A4Plax_g;Path=/;Domain=.salesforce.com;Expires=Sun, 18-Jan-2015 09:09:18 GMT]
+Content-Type=[application/xml]
+------------ Response start ----------
+  <?xml version="1.0" encoding="UTF-8"?>
+    <jobInfo
+   xmlns="http://www.force.com/2009/06/asyncapi/dataload">
+ <id>75010000000zAsoAAE</id>
+ <operation>query</operation>
+ <object>Merchant__c</object>
+ <createdById>00510000003shwWAAQ</createdById>
+ <createdDate>2014-11-19T09:09:18.000Z</createdDate>
+ <systemModstamp>2014-11-19T09:09:18.000Z</systemModstamp>
+ <state>Open</state>
+ <concurrencyMode>Parallel</concurrencyMode>
+ <contentType>CSV</contentType>
+ <numberBatchesQueued>0</numberBatchesQueued>
+ <numberBatchesInProgress>0</numberBatchesInProgress>
+ <numberBatchesCompleted>0</numberBatchesCompleted>
+ <numberBatchesFailed>0</numberBatchesFailed>
+ <numberBatchesTotal>0</numberBatchesTotal>
+ <numberRecordsProcessed>0</numberRecordsProcessed>
+ <numberRetries>0</numberRetries>
+ <apiVersion>32.0</apiVersion>
+ <numberRecordsFailed>0</numberRecordsFailed>
+ <totalProcessingTime>0</totalProcessingTime>
+ <apiActiveProcessingTime>0</apiActiveProcessingTime>
+ <apexProcessingTime>0</apexProcessingTime>
+</jobInfo>
+------------ Response end   ----------
+WSC: Creating a new connection to https://ap.salesforce.com/services/async/32.0/job/75010000000zAsoAAE Proxy = DIRECT username null
+https://ap.salesforce.com/services/async/32.0/job/75010000000zAsoAAE
+null: HTTP/1.1 200 OK
+Transfer-Encoding: chunked
+Date: Wed, 19 Nov 2014 09:09:18 GMT
+Expires: Thu, 01 Jan 1970 00:00:00 GMT
+Set-Cookie: BrowserId=nGe-qtl8TGSBOoqJJxTGDA;Path=/;Domain=.salesforce.com;Expires=Sun, 18-Jan-2015 09:09:18 GMT
+Content-Type: application/xml
+------------ Response start ----------
+  <?xml version="1.0" encoding="UTF-8"?>
+    <jobInfo
+   xmlns="http://www.force.com/2009/06/asyncapi/dataload">
+ <id>75010000000zAsoAAE</id>
+ <operation>query</operation>
+ <object>Merchant__c</object>
+ <createdById>00510000003shwWAAQ</createdById>
+ <createdDate>2014-11-19T09:09:18.000Z</createdDate>
+ <systemModstamp>2014-11-19T09:09:18.000Z</systemModstamp>
+ <state>Open</state>
+ <concurrencyMode>Parallel</concurrencyMode>
+ <contentType>CSV</contentType>
+ <numberBatchesQueued>0</numberBatchesQueued>
+ <numberBatchesInProgress>0</numberBatchesInProgress>
+ <numberBatchesCompleted>0</numberBatchesCompleted>
+ <numberBatchesFailed>0</numberBatchesFailed>
+ <numberBatchesTotal>0</numberBatchesTotal>
+ <numberRecordsProcessed>0</numberRecordsProcessed>
+ <numberRetries>0</numberRetries>
+ <apiVersion>32.0</apiVersion>
+ <numberRecordsFailed>0</numberRecordsFailed>
+ <totalProcessingTime>0</totalProcessingTime>
+ <apiActiveProcessingTime>0</apiActiveProcessingTime>
+ <apexProcessingTime>0</apexProcessingTime>
+</jobInfo>
+------------ Response end   ----------
+WSC: Creating a new connection to https://ap.salesforce.com/services/async/32.0/job/75010000000zAsoAAE/batch Proxy = DIRECT username null
+------------ Request start   ----------
+SELECT Name, shop_code__c FROM Merchant__c
+------------ Request end   ----------
+null=[HTTP/1.1 201 Created]
+Transfer-Encoding=[chunked]
+Date=[Wed, 19 Nov 2014 09:09:18 GMT]
+Expires=[Thu, 01 Jan 1970 00:00:00 GMT]
+Location=[/services/async/32.0/job/75010000000zAsoAAE/batch/75110000003Y4mJAAS]
+Set-Cookie=[BrowserId=kAhRrOucS5yagHLXNrGv5g;Path=/;Domain=.salesforce.com;Expires=Sun, 18-Jan-2015 09:09:18 GMT]
+Content-Type=[application/xml]
+------------ Response start ----------
+  <?xml version="1.0" encoding="UTF-8"?>
+    <batchInfo
+   xmlns="http://www.force.com/2009/06/asyncapi/dataload">
+ <id>75110000003Y4mJAAS</id>
+ <jobId>75010000000zAsoAAE</jobId>
+ <state>Queued</state>
+ <createdDate>2014-11-19T09:09:18.000Z</createdDate>
+ <systemModstamp>2014-11-19T09:09:18.000Z</systemModstamp>
+ <numberRecordsProcessed>0</numberRecordsProcessed>
+ <numberRecordsFailed>0</numberRecordsFailed>
+ <totalProcessingTime>0</totalProcessingTime>
+ <apiActiveProcessingTime>0</apiActiveProcessingTime>
+ <apexProcessingTime>0</apexProcessingTime>
+</batchInfo>
+------------ Response end   ----------
+WSC: Creating a new connection to https://ap.salesforce.com/services/async/32.0/job/75010000000zAsoAAE/batch/75110000003Y4mJAAS Proxy = DIRECT username null
+https://ap.salesforce.com/services/async/32.0/job/75010000000zAsoAAE/batch/75110000003Y4mJAAS
+null: HTTP/1.1 200 OK
+Transfer-Encoding: chunked
+Date: Wed, 19 Nov 2014 09:09:48 GMT
+Expires: Thu, 01 Jan 1970 00:00:00 GMT
+Set-Cookie: BrowserId=JZAV4XLNS7GEomolHTzxYQ;Path=/;Domain=.salesforce.com;Expires=Sun, 18-Jan-2015 09:09:48 GMT
+Content-Type: application/xml
+------------ Response start ----------
+  <?xml version="1.0" encoding="UTF-8"?>
+    <batchInfo
+   xmlns="http://www.force.com/2009/06/asyncapi/dataload">
+ <id>75110000003Y4mJAAS</id>
+ <jobId>75010000000zAsoAAE</jobId>
+ <state>Completed</state>
+ <createdDate>2014-11-19T09:09:18.000Z</createdDate>
+ <systemModstamp>2014-11-19T09:09:18.000Z</systemModstamp>
+ <numberRecordsProcessed>90</numberRecordsProcessed>
+ <numberRecordsFailed>0</numberRecordsFailed>
+ <totalProcessingTime>0</totalProcessingTime>
+ <apiActiveProcessingTime>0</apiActiveProcessingTime>
+ <apexProcessingTime>0</apexProcessingTime>
+</batchInfo>
+------------ Response end   ----------
+WSC: Creating a new connection to https://ap.salesforce.com/services/async/32.0/job/75010000000zAsoAAE/batch/75110000003Y4mJAAS/result Proxy = DIRECT username null
+https://ap.salesforce.com/services/async/32.0/job/75010000000zAsoAAE/batch/75110000003Y4mJAAS/result
+null: HTTP/1.1 200 OK
+Date: Wed, 19 Nov 2014 09:09:49 GMT
+Content-Length: 114
+Expires: Thu, 01 Jan 1970 00:00:00 GMT
+Set-Cookie: BrowserId=02izTJkfQAyDb4A7WFhU9Q;Path=/;Domain=.salesforce.com;Expires=Sun, 18-Jan-2015 09:09:49 GMT
+Content-Type: application/xml
+------------ Response start ----------
+  <result-list xmlns="http://www.force.com/2009/06/asyncapi/dataload">
+    <result>75210000000LlHz</result>
+</result-list>
+------------ Response end   ----------
+WSC: Creating a new connection to https://ap.salesforce.com/services/async/32.0/job/75010000000zAsoAAE/batch/75110000003Y4mJAAS/result/75210000000LlHz Proxy = DIRECT username null
+https://ap.salesforce.com/services/async/32.0/job/75010000000zAsoAAE/batch/75110000003Y4mJAAS/result/75210000000LlHz
+null: HTTP/1.1 200 OK
+Transfer-Encoding: chunked
+Date: Wed, 19 Nov 2014 09:09:49 GMT
+Expires: Thu, 01 Jan 1970 00:00:00 GMT
+Set-Cookie: BrowserId=H2nJNZDuRXKVSiezsTSwYQ;Path=/;Domain=.salesforce.com;Expires=Sun, 18-Jan-2015 09:09:49 GMT
+Content-Type: text/csv; charset=UTF-8
+------------ Response start ----------
+"Name","shop_code__c"
+"JeryJan","5006803999212"
+"Dogulas Pepper","5006712999914"
+"Mirokc Pepper","5006712999999"
+"Aluga Pepper","5006712999913"
+"Lotus Pepper","5006712999954"
+"Bilber Pepper","5006712999912"
+"JeryJan","5006803999212"
+"Dogulas Pepper","5006712999914"
+"Mirokc Pepper","5006712999999"
+"Aluga Pepper","5006712999913"
+"Lotus Pepper","5006712999954"
+"Bilber Pepper","5006712999912"
+"JeryJan","5006803999212"
+"Dogulas Pepper","5006712999914"
+"Mirokc Pepper","5006712999999"
+"Aluga Pepper","5006712999913"
+"Lotus Pepper","5006712999954"
+"Bilber Pepper","5006712999912"
+"JeryJan","5006803999212"
+"Dogulas Pepper","5006712999914"
+"Mirokc Pepper","5006712999999"
+"Aluga Pepper","5006712999913"
+"Lotus Pepper","5006712999954"
+"Bilber Pepper","5006712999912"
+"JeryJan","5006803999212"
+"Dogulas Pepper","5006712999914"
+"Mirokc Pepper","5006712999999"
+"Aluga Pepper","5006712999913"
+"Lotus Pepper","5006712999954"
+"Bilber Pepper","5006712999912"
+"JeryJan","5006803999212"
+"Dogulas Pepper","5006712999914"
+"Mirokc Pepper","5006712999999"
+"Aluga Pepper","5006712999913"
+"Lotus Pepper","5006712999954"
+"Bilber Pepper","5006712999912"
+"JeryJan","5006803999212"
+"Dogulas Pepper","5006712999914"
+"Mirokc Pepper","5006712999999"
+"Aluga Pepper","5006712999913"
+"Lotus Pepper","5006712999954"
+"Bilber Pepper","5006712999912"
+"JeryJan","5006803999212"
+"Dogulas Pepper","5006712999914"
+"Mirokc Pepper","5006712999999"
+"Aluga Pepper","5006712999913"
+"Lotus Pepper","5006712999954"
+"Bilber Pepper","5006712999912"
+"JeryJan","5006803999212"
+"Dogulas Pepper","5006712999914"
+"Mirokc Pepper","5006712999999"
+"Aluga Pepper","5006712999913"
+"Lotus Pepper","5006712999954"
+"Bilber Pepper","5006712999912"
+"JeryJan","5006803999212"
+"Dogulas Pepper","5006712999914"
+"Mirokc Pepper","5006712999999"
+"Aluga Pepper","5006712999913"
+"Lotus Pepper","5006712999954"
+"Bilber Pepper","5006712999912"
+"JeryJan","5006803999212"
+"Dogulas Pepper","5006712999914"
+"Mirokc Pepper","5006712999999"
+"Aluga Pepper","5006712999913"
+"Lotus Pepper","5006712999954"
+"Bilber Pepper","5006712999912"
+"JeryJan","5006803999212"
+"Dogulas Pepper","5006712999914"
+"Mirokc Pepper","5006712999999"
+"Aluga Pepper","5006712999913"
+"Lotus Pepper","5006712999954"
+"Bilber Pepper","5006712999912"
+"JeryJan","5006803999212"
+"Dogulas Pepper","5006712999914"
+"Mirokc Pepper","5006712999999"
+"Aluga Pepper","5006712999913"
+"Lotus Pepper","5006712999954"
+"Bilber Pepper","5006712999912"
+"JeryJan","5006803999212"
+"Dogulas Pepper","5006712999914"
+"Mirokc Pepper","5006712999999"
+"Aluga Pepper","5006712999913"
+"Lotus Pepper","5006712999954"
+"Bilber Pepper","5006712999912"
+"JeryJan","5006803999212"
+"Dogulas Pepper","5006712999914"
+"Mirokc Pepper","5006712999999"
+"Aluga Pepper","5006712999913"
+"Lotus Pepper","5006712999954"
+"Bilber Pepper","5006712999912"
+
+------------ Response end   ----------
+WSC: Creating a new connection to https://ap.salesforce.com/services/async/32.0/job/ Proxy = DIRECT username null
+WSC: Creating a new connection to https://ap.salesforce.com/services/async/32.0/job/ Proxy = DIRECT username null
+WSC: Creating a new connection to https://ap.salesforce.com/services/async/32.0/job/ Proxy = DIRECT username null
+WSC: Creating a new connection to https://ap.salesforce.com/services/async/32.0/job/ Proxy = DIRECT username null
+WSC: Creating a new connection to https://ap.salesforce.com/services/async/32.0/job/ Proxy = DIRECT username null
+------------ Request start   ----------
+<?xml version="1.0" encoding="UTF-8"?><jobInfo
+   xmlns="http://www.force.com/2009/06/asyncapi/dataload">
+ <operation>query</operation>
+ <object>Merchant__c</object>
+ <concurrencyMode>Parallel</concurrencyMode>
+ <contentType>CSV</contentType>
+</jobInfo>
+------------ Request end   ----------
+null=[HTTP/1.1 201 Created]
+Transfer-Encoding=[chunked]
+Date=[Wed, 19 Nov 2014 09:13:06 GMT]
+Expires=[Thu, 01 Jan 1970 00:00:00 GMT]
+Location=[/services/async/32.0/job/75010000000zAt3AAE]
+Set-Cookie=[BrowserId=EdrnKY0hQ9mwOHoui133lw;Path=/;Domain=.salesforce.com;Expires=Sun, 18-Jan-2015 09:13:06 GMT]
+Content-Type=[application/xml]
+------------ Response start ----------
+  <?xml version="1.0" encoding="UTF-8"?>
+    <jobInfo
+   xmlns="http://www.force.com/2009/06/asyncapi/dataload">
+ <id>75010000000zAt3AAE</id>
+ <operation>query</operation>
+ <object>Merchant__c</object>
+ <createdById>00510000003shwWAAQ</createdById>
+ <createdDate>2014-11-19T09:13:06.000Z</createdDate>
+ <systemModstamp>2014-11-19T09:13:06.000Z</systemModstamp>
+ <state>Open</state>
+ <concurrencyMode>Parallel</concurrencyMode>
+ <contentType>CSV</contentType>
+ <numberBatchesQueued>0</numberBatchesQueued>
+ <numberBatchesInProgress>0</numberBatchesInProgress>
+ <numberBatchesCompleted>0</numberBatchesCompleted>
+ <numberBatchesFailed>0</numberBatchesFailed>
+ <numberBatchesTotal>0</numberBatchesTotal>
+ <numberRecordsProcessed>0</numberRecordsProcessed>
+ <numberRetries>0</numberRetries>
+ <apiVersion>32.0</apiVersion>
+ <numberRecordsFailed>0</numberRecordsFailed>
+ <totalProcessingTime>0</totalProcessingTime>
+ <apiActiveProcessingTime>0</apiActiveProcessingTime>
+ <apexProcessingTime>0</apexProcessingTime>
+</jobInfo>
+------------ Response end   ----------
+WSC: Creating a new connection to https://ap.salesforce.com/services/async/32.0/job/75010000000zAt3AAE Proxy = DIRECT username null
+https://ap.salesforce.com/services/async/32.0/job/75010000000zAt3AAE
+null: HTTP/1.1 200 OK
+Transfer-Encoding: chunked
+Date: Wed, 19 Nov 2014 09:13:06 GMT
+Expires: Thu, 01 Jan 1970 00:00:00 GMT
+Set-Cookie: BrowserId=9rq48eu4ST2JyagCt2QmEg;Path=/;Domain=.salesforce.com;Expires=Sun, 18-Jan-2015 09:13:06 GMT
+Content-Type: application/xml
+------------ Response start ----------
+  <?xml version="1.0" encoding="UTF-8"?>
+    <jobInfo
+   xmlns="http://www.force.com/2009/06/asyncapi/dataload">
+ <id>75010000000zAt3AAE</id>
+ <operation>query</operation>
+ <object>Merchant__c</object>
+ <createdById>00510000003shwWAAQ</createdById>
+ <createdDate>2014-11-19T09:13:06.000Z</createdDate>
+ <systemModstamp>2014-11-19T09:13:06.000Z</systemModstamp>
+ <state>Open</state>
+ <concurrencyMode>Parallel</concurrencyMode>
+ <contentType>CSV</contentType>
+ <numberBatchesQueued>0</numberBatchesQueued>
+ <numberBatchesInProgress>0</numberBatchesInProgress>
+ <numberBatchesCompleted>0</numberBatchesCompleted>
+ <numberBatchesFailed>0</numberBatchesFailed>
+ <numberBatchesTotal>0</numberBatchesTotal>
+ <numberRecordsProcessed>0</numberRecordsProcessed>
+ <numberRetries>0</numberRetries>
+ <apiVersion>32.0</apiVersion>
+ <numberRecordsFailed>0</numberRecordsFailed>
+ <totalProcessingTime>0</totalProcessingTime>
+ <apiActiveProcessingTime>0</apiActiveProcessingTime>
+ <apexProcessingTime>0</apexProcessingTime>
+</jobInfo>
+------------ Response end   ----------
+WSC: Creating a new connection to https://ap.salesforce.com/services/async/32.0/job/75010000000zAt3AAE/batch Proxy = DIRECT username null
+------------ Request start   ----------
+SELECT Name, shop_code__c FROM Merchant__c
+------------ Request end   ----------
+null=[HTTP/1.1 201 Created]
+Transfer-Encoding=[chunked]
+Date=[Wed, 19 Nov 2014 09:13:06 GMT]
+Expires=[Thu, 01 Jan 1970 00:00:00 GMT]
+Location=[/services/async/32.0/job/75010000000zAt3AAE/batch/75110000003Y4mYAAS]
+Set-Cookie=[BrowserId=8M2qD3WcSiqryo1F-mQzOw;Path=/;Domain=.salesforce.com;Expires=Sun, 18-Jan-2015 09:13:06 GMT]
+Content-Type=[application/xml]
+------------ Response start ----------
+  <?xml version="1.0" encoding="UTF-8"?>
+    <batchInfo
+   xmlns="http://www.force.com/2009/06/asyncapi/dataload">
+ <id>75110000003Y4mYAAS</id>
+ <jobId>75010000000zAt3AAE</jobId>
+ <state>Queued</state>
+ <createdDate>2014-11-19T09:13:06.000Z</createdDate>
+ <systemModstamp>2014-11-19T09:13:06.000Z</systemModstamp>
+ <numberRecordsProcessed>0</numberRecordsProcessed>
+ <numberRecordsFailed>0</numberRecordsFailed>
+ <totalProcessingTime>0</totalProcessingTime>
+ <apiActiveProcessingTime>0</apiActiveProcessingTime>
+ <apexProcessingTime>0</apexProcessingTime>
+</batchInfo>
+------------ Response end   ----------
+WSC: Creating a new connection to https://ap.salesforce.com/services/async/32.0/job/75010000000zAt3AAE/batch/75110000003Y4mYAAS Proxy = DIRECT username null
+https://ap.salesforce.com/services/async/32.0/job/75010000000zAt3AAE/batch/75110000003Y4mYAAS
+null: HTTP/1.1 200 OK
+Transfer-Encoding: chunked
+Date: Wed, 19 Nov 2014 09:13:11 GMT
+Expires: Thu, 01 Jan 1970 00:00:00 GMT
+Set-Cookie: BrowserId=xRF6x3l_Q36UKJBJpy-eRQ;Path=/;Domain=.salesforce.com;Expires=Sun, 18-Jan-2015 09:13:11 GMT
+Content-Type: application/xml
+------------ Response start ----------
+  <?xml version="1.0" encoding="UTF-8"?>
+    <batchInfo
+   xmlns="http://www.force.com/2009/06/asyncapi/dataload">
+ <id>75110000003Y4mYAAS</id>
+ <jobId>75010000000zAt3AAE</jobId>
+ <state>Completed</state>
+ <createdDate>2014-11-19T09:13:06.000Z</createdDate>
+ <systemModstamp>2014-11-19T09:13:06.000Z</systemModstamp>
+ <numberRecordsProcessed>90</numberRecordsProcessed>
+ <numberRecordsFailed>0</numberRecordsFailed>
+ <totalProcessingTime>0</totalProcessingTime>
+ <apiActiveProcessingTime>0</apiActiveProcessingTime>
+ <apexProcessingTime>0</apexProcessingTime>
+</batchInfo>
+------------ Response end   ----------
+WSC: Creating a new connection to https://ap.salesforce.com/services/async/32.0/job/75010000000zAt3AAE/batch/75110000003Y4mYAAS/result Proxy = DIRECT username null
+https://ap.salesforce.com/services/async/32.0/job/75010000000zAt3AAE/batch/75110000003Y4mYAAS/result
+null: HTTP/1.1 200 OK
+Date: Wed, 19 Nov 2014 09:13:11 GMT
+Content-Length: 114
+Expires: Thu, 01 Jan 1970 00:00:00 GMT
+Set-Cookie: BrowserId=WnaQ1kkvTKGkV6UF51LHIg;Path=/;Domain=.salesforce.com;Expires=Sun, 18-Jan-2015 09:13:11 GMT
+Content-Type: application/xml
+------------ Response start ----------
+  <result-list xmlns="http://www.force.com/2009/06/asyncapi/dataload">
+    <result>75210000000LlI4</result>
+</result-list>
+------------ Response end   ----------
+WSC: Creating a new connection to https://ap.salesforce.com/services/async/32.0/job/75010000000zAt3AAE/batch/75110000003Y4mYAAS/result/75210000000LlI4 Proxy = DIRECT username null
+https://ap.salesforce.com/services/async/32.0/job/75010000000zAt3AAE/batch/75110000003Y4mYAAS/result/75210000000LlI4
+null: HTTP/1.1 200 OK
+Transfer-Encoding: chunked
+Date: Wed, 19 Nov 2014 09:13:11 GMT
+Expires: Thu, 01 Jan 1970 00:00:00 GMT
+Set-Cookie: BrowserId=MxADAXOAQ5uwzvcAicsaQQ;Path=/;Domain=.salesforce.com;Expires=Sun, 18-Jan-2015 09:13:11 GMT
+Content-Type: text/csv; charset=UTF-8
+------------ Response start ----------
+"Name","shop_code__c"
+"JeryJan","5006803999212"
+"Dogulas Pepper","5006712999914"
+"Mirokc Pepper","5006712999999"
+"Aluga Pepper","5006712999913"
+"Lotus Pepper","5006712999954"
+"Bilber Pepper","5006712999912"
+"JeryJan","5006803999212"
+"Dogulas Pepper","5006712999914"
+"Mirokc Pepper","5006712999999"
+"Aluga Pepper","5006712999913"
+"Lotus Pepper","5006712999954"
+"Bilber Pepper","5006712999912"
+"JeryJan","5006803999212"
+"Dogulas Pepper","5006712999914"
+"Mirokc Pepper","5006712999999"
+"Aluga Pepper","5006712999913"
+"Lotus Pepper","5006712999954"
+"Bilber Pepper","5006712999912"
+"JeryJan","5006803999212"
+"Dogulas Pepper","5006712999914"
+"Mirokc Pepper","5006712999999"
+"Aluga Pepper","5006712999913"
+"Lotus Pepper","5006712999954"
+"Bilber Pepper","5006712999912"
+"JeryJan","5006803999212"
+"Dogulas Pepper","5006712999914"
+"Mirokc Pepper","5006712999999"
+"Aluga Pepper","5006712999913"
+"Lotus Pepper","5006712999954"
+"Bilber Pepper","5006712999912"
+"JeryJan","5006803999212"
+"Dogulas Pepper","5006712999914"
+"Mirokc Pepper","5006712999999"
+"Aluga Pepper","5006712999913"
+"Lotus Pepper","5006712999954"
+"Bilber Pepper","5006712999912"
+"JeryJan","5006803999212"
+"Dogulas Pepper","5006712999914"
+"Mirokc Pepper","5006712999999"
+"Aluga Pepper","5006712999913"
+"Lotus Pepper","5006712999954"
+"Bilber Pepper","5006712999912"
+"JeryJan","5006803999212"
+"Dogulas Pepper","5006712999914"
+"Mirokc Pepper","5006712999999"
+"Aluga Pepper","5006712999913"
+"Lotus Pepper","5006712999954"
+"Bilber Pepper","5006712999912"
+"JeryJan","5006803999212"
+"Dogulas Pepper","5006712999914"
+"Mirokc Pepper","5006712999999"
+"Aluga Pepper","5006712999913"
+"Lotus Pepper","5006712999954"
+"Bilber Pepper","5006712999912"
+"JeryJan","5006803999212"
+"Dogulas Pepper","5006712999914"
+"Mirokc Pepper","5006712999999"
+"Aluga Pepper","5006712999913"
+"Lotus Pepper","5006712999954"
+"Bilber Pepper","5006712999912"
+"JeryJan","5006803999212"
+"Dogulas Pepper","5006712999914"
+"Mirokc Pepper","5006712999999"
+"Aluga Pepper","5006712999913"
+"Lotus Pepper","5006712999954"
+"Bilber Pepper","5006712999912"
+"JeryJan","5006803999212"
+"Dogulas Pepper","5006712999914"
+"Mirokc Pepper","5006712999999"
+"Aluga Pepper","5006712999913"
+"Lotus Pepper","5006712999954"
+"Bilber Pepper","5006712999912"
+"JeryJan","5006803999212"
+"Dogulas Pepper","5006712999914"
+"Mirokc Pepper","5006712999999"
+"Aluga Pepper","5006712999913"
+"Lotus Pepper","5006712999954"
+"Bilber Pepper","5006712999912"
+"JeryJan","5006803999212"
+"Dogulas Pepper","5006712999914"
+"Mirokc Pepper","5006712999999"
+"Aluga Pepper","5006712999913"
+"Lotus Pepper","5006712999954"
+"Bilber Pepper","5006712999912"
+"JeryJan","5006803999212"
+"Dogulas Pepper","5006712999914"
+"Mirokc Pepper","5006712999999"
+"Aluga Pepper","5006712999913"
+"Lotus Pepper","5006712999954"
+"Bilber Pepper","5006712999912"
+
+------------ Response end   ----------
+WSC: Creating a new connection to https://ap.salesforce.com/services/async/32.0/job/ Proxy = DIRECT username null
+WSC: Creating a new connection to https://ap.salesforce.com/services/async/32.0/job/ Proxy = HTTP @ Proxy:8080 username null
+WSC: Creating a new connection to https://ap.salesforce.com/services/async/32.0/job/ Proxy = HTTP @ Proxy:8080 username null
+WSC: Creating a new connection to https://ap.salesforce.com/services/async/32.0/job/ Proxy = HTTP @ Proxy:8080 username null
+WSC: Creating a new connection to https://ap.salesforce.com/services/async/32.0/job/ Proxy = DIRECT username null
+WSC: Creating a new connection to https://ap.salesforce.com/services/async/32.0/job/ Proxy = DIRECT username null
+------------ Request start   ----------
+<?xml version="1.0" encoding="UTF-8"?><jobInfo
+   xmlns="http://www.force.com/2009/06/asyncapi/dataload">
+ <operation>query</operation>
+ <object>Merchant__c</object>
+ <concurrencyMode>Parallel</concurrencyMode>
+ <contentType>CSV</contentType>
+</jobInfo>
+------------ Request end   ----------
+null=[HTTP/1.1 201 Created]
+Transfer-Encoding=[chunked]
+Date=[Wed, 19 Nov 2014 09:19:47 GMT]
+Expires=[Thu, 01 Jan 1970 00:00:00 GMT]
+Location=[/services/async/32.0/job/75010000000zAtXAAU]
+Set-Cookie=[BrowserId=QNSWF0nkSf2q4OB6xfPoVQ;Path=/;Domain=.salesforce.com;Expires=Sun, 18-Jan-2015 09:19:47 GMT]
+Content-Type=[application/xml]
+------------ Response start ----------
+  <?xml version="1.0" encoding="UTF-8"?>
+    <jobInfo
+   xmlns="http://www.force.com/2009/06/asyncapi/dataload">
+ <id>75010000000zAtXAAU</id>
+ <operation>query</operation>
+ <object>Merchant__c</object>
+ <createdById>00510000003shwWAAQ</createdById>
+ <createdDate>2014-11-19T09:19:47.000Z</createdDate>
+ <systemModstamp>2014-11-19T09:19:47.000Z</systemModstamp>
+ <state>Open</state>
+ <concurrencyMode>Parallel</concurrencyMode>
+ <contentType>CSV</contentType>
+ <numberBatchesQueued>0</numberBatchesQueued>
+ <numberBatchesInProgress>0</numberBatchesInProgress>
+ <numberBatchesCompleted>0</numberBatchesCompleted>
+ <numberBatchesFailed>0</numberBatchesFailed>
+ <numberBatchesTotal>0</numberBatchesTotal>
+ <numberRecordsProcessed>0</numberRecordsProcessed>
+ <numberRetries>0</numberRetries>
+ <apiVersion>32.0</apiVersion>
+ <numberRecordsFailed>0</numberRecordsFailed>
+ <totalProcessingTime>0</totalProcessingTime>
+ <apiActiveProcessingTime>0</apiActiveProcessingTime>
+ <apexProcessingTime>0</apexProcessingTime>
+</jobInfo>
+------------ Response end   ----------
+WSC: Creating a new connection to https://ap.salesforce.com/services/async/32.0/job/75010000000zAtXAAU Proxy = DIRECT username null
+https://ap.salesforce.com/services/async/32.0/job/75010000000zAtXAAU
+null: HTTP/1.1 200 OK
+Transfer-Encoding: chunked
+Date: Wed, 19 Nov 2014 09:19:48 GMT
+Expires: Thu, 01 Jan 1970 00:00:00 GMT
+Set-Cookie: BrowserId=wA_BELWXQpmxoAMilb-KDA;Path=/;Domain=.salesforce.com;Expires=Sun, 18-Jan-2015 09:19:48 GMT
+Content-Type: application/xml
+------------ Response start ----------
+  <?xml version="1.0" encoding="UTF-8"?>
+    <jobInfo
+   xmlns="http://www.force.com/2009/06/asyncapi/dataload">
+ <id>75010000000zAtXAAU</id>
+ <operation>query</operation>
+ <object>Merchant__c</object>
+ <createdById>00510000003shwWAAQ</createdById>
+ <createdDate>2014-11-19T09:19:47.000Z</createdDate>
+ <systemModstamp>2014-11-19T09:19:47.000Z</systemModstamp>
+ <state>Open</state>
+ <concurrencyMode>Parallel</concurrencyMode>
+ <contentType>CSV</contentType>
+ <numberBatchesQueued>0</numberBatchesQueued>
+ <numberBatchesInProgress>0</numberBatchesInProgress>
+ <numberBatchesCompleted>0</numberBatchesCompleted>
+ <numberBatchesFailed>0</numberBatchesFailed>
+ <numberBatchesTotal>0</numberBatchesTotal>
+ <numberRecordsProcessed>0</numberRecordsProcessed>
+ <numberRetries>0</numberRetries>
+ <apiVersion>32.0</apiVersion>
+ <numberRecordsFailed>0</numberRecordsFailed>
+ <totalProcessingTime>0</totalProcessingTime>
+ <apiActiveProcessingTime>0</apiActiveProcessingTime>
+ <apexProcessingTime>0</apexProcessingTime>
+</jobInfo>
+------------ Response end   ----------
+WSC: Creating a new connection to https://ap.salesforce.com/services/async/32.0/job/75010000000zAtXAAU/batch Proxy = DIRECT username null
+------------ Request start   ----------
+SELECT Name, shop_code__c FROM Merchant__c
+------------ Request end   ----------
+null=[HTTP/1.1 201 Created]
+Transfer-Encoding=[chunked]
+Date=[Wed, 19 Nov 2014 09:19:48 GMT]
+Expires=[Thu, 01 Jan 1970 00:00:00 GMT]
+Location=[/services/async/32.0/job/75010000000zAtXAAU/batch/75110000003Y4n2AAC]
+Set-Cookie=[BrowserId=_XbK7ToLTEe84T23bBhtQA;Path=/;Domain=.salesforce.com;Expires=Sun, 18-Jan-2015 09:19:48 GMT]
+Content-Type=[application/xml]
+------------ Response start ----------
+  <?xml version="1.0" encoding="UTF-8"?>
+    <batchInfo
+   xmlns="http://www.force.com/2009/06/asyncapi/dataload">
+ <id>75110000003Y4n2AAC</id>
+ <jobId>75010000000zAtXAAU</jobId>
+ <state>Queued</state>
+ <createdDate>2014-11-19T09:19:48.000Z</createdDate>
+ <systemModstamp>2014-11-19T09:19:48.000Z</systemModstamp>
+ <numberRecordsProcessed>0</numberRecordsProcessed>
+ <numberRecordsFailed>0</numberRecordsFailed>
+ <totalProcessingTime>0</totalProcessingTime>
+ <apiActiveProcessingTime>0</apiActiveProcessingTime>
+ <apexProcessingTime>0</apexProcessingTime>
+</batchInfo>
+------------ Response end   ----------
+WSC: Creating a new connection to https://ap.salesforce.com/services/async/32.0/job/75010000000zAtXAAU/batch/75110000003Y4n2AAC Proxy = DIRECT username null
+WSC: Creating a new connection to https://ap.salesforce.com/services/async/32.0/job/ Proxy = DIRECT username null
