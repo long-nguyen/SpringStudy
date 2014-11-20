@@ -27,21 +27,21 @@ import com.sforce.ws.ConnectionException;
 import com.sforce.ws.ConnectorConfig;
 
 /**
- * This sample demonstrates how to insert data to saleforce using BULK API.
+ * This sample demonstrates how to upsert data to saleforce using BULK API.
  * Maximum 5000 batch/job.
  * 10000 rows/batch
  * @author long.nguyen-tien
  *
  */
-public class InsertSample {
+public class UpsertSample {
 	//https://www.salesforce.com/us/developer/docs/api_asynch/
     public void run(String username, String password) throws ConnectionException, AsyncApiException, IOException {
         BulkConnection connection = getBulkConnection(username, password);
         //Create a job for Merchant object. It is a custom object so it need __c
-	    JobInfo job = createJob("Merchant__c", connection);
+	    JobInfo job = createJob("Shop__c", connection);
 	    //Send batch data to server, got array of batch info
 	    List<BatchInfo> batchInfoList = createBatchesFromCSVFile(connection, job,
-	        "src/main/resources/MerchantList.csv");
+	        "src/main/resources/ShopList.csv");
 	    //Close job, all neccessary batch are added to server
 	    closeJob(connection, job.getId());
 	    //Start monitoring batch process 
@@ -101,7 +101,8 @@ public class InsertSample {
         //With update, you need record's id
         //With delete, you need only id
         //with Upsert, you need external id
-        job.setOperation(OperationEnum.insert);
+        job.setExternalIdFieldName("shop_code__c");
+        job.setOperation(OperationEnum.upsert);
         //Any data sending using bulk must in csv or xml
         job.setContentType(ContentType.CSV);
         job = connection.createJob(job);
@@ -125,7 +126,7 @@ public class InsertSample {
         //Read CSV file header
         byte[] headerBytes = (reader.readLine() + "\n").getBytes();
         int headerByteLength = headerBytes.length;
-        File tmpFile = File.createTempFile("bulkAPIInsert", ".csv");
+        File tmpFile = File.createTempFile("bulkAPIUpsert", ".csv");
         //Split the CSV file into multiple csv file, all include the same header. Each sub-csv file is equivalent to a batch
         try {
                 FileOutputStream tmpOut = new FileOutputStream(tmpFile);
@@ -224,7 +225,7 @@ private void awaitCompletion(BulkConnection connection, JobInfo job, List<BatchI
             Thread.sleep(sleepTime);
         } catch (InterruptedException e) {}
         System.out.println("Awaiting results..." + incomplete.size());
-        sleepTime = 10000L;
+        sleepTime = 5000L;
         BatchInfo[] statusList =
           connection.getBatchInfoList(job.getId()).getBatchInfo();
         for (BatchInfo b : statusList) {

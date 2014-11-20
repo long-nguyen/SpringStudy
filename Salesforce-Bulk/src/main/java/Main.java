@@ -15,7 +15,10 @@ public class Main {
 	public static void main(String[] args) throws ConnectionException, AsyncApiException, IOException {
 //		InsertSample sample = new InsertSample();
 //		sample.run(USERNAME, PASSWORD + TOKEN);
-		QuerySample sample = new QuerySample();
+//		QuerySample sample = new QuerySample();
+//		sample.run(USERNAME, PASSWORD + TOKEN);
+		UpsertSample sample = new UpsertSample();
 		sample.run(USERNAME, PASSWORD + TOKEN);
+				
 	}
 }
